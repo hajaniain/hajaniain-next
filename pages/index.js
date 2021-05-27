@@ -16,6 +16,10 @@ export default function Home() {
       <Head>
         <title>Hajaniaina Rafaliarintsoa</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Hajaniaina Marius Rafaliarintsoa's personal website."
+        ></meta>
       </Head>
       {loaded && (
         <div className="dark:text-white absolute top-3 right-3">
