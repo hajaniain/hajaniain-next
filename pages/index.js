@@ -32,13 +32,13 @@ export default function Home() {
           </button>
         </div>
       )}
-      <div className="flex flex-col justify-center h-screen dark:bg-gray-800">
+      <div className="flex flex-col justify-center h-screen bg-gray-200 dark:bg-gray-800">
         <img
-          className="mx-auto w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 rounded-md"
+          className="mx-auto w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 rounded-lg shadow-2xl"
           src="https://avatars0.githubusercontent.com/u/6097819?s=460&v=4"
           alt="hajaniaina marius rafaliarintsoa image"
         ></img>
-        <h1 className="text-center text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl font-normal tracking-wide mt-6 dark:text-white">
+        <h1 className="text-center text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl font-light tracking-wide mt-6 dark:text-white">
           Hajaniaina Rafaliarintsoa
         </h1>
         <div className="flex flex-row mx-auto mt-6">
@@ -57,6 +57,11 @@ export default function Home() {
             src="linkedin.svg"
             alt="hajaniaina rafaliarintsoa's linkedin"
           />
+          <SocialLink
+            href="https://www.instagram.com/faliarintsoa/"
+            src="instagram.svg"
+            alt="hajaniaina rafaliarintsoa's instagram"
+          />
         </div>
       </div>
     </div>
@@ -64,8 +69,6 @@ export default function Home() {
 }
 
 function defaultTheme() {
-  let defaultTheme = "dark";
-  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   if (typeof window !== "undefined") {
     if (
       window.localStorage.theme === "dark" ||
@@ -75,10 +78,10 @@ function defaultTheme() {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
-      defaultTheme = "light";
+      return "light";
     }
   }
-  return defaultTheme;
+  return "dark";
 }
 
 function setTheme(darkMode) {
@@ -93,9 +96,9 @@ function setTheme(darkMode) {
 
 function SocialLink(props) {
   return (
-    <a href={props.href}>
+    <a href={props.href} target="_blank">
       <img
-        className="w-8 mx-3 rounded-md focus:ring-4"
+        className="w-7 md:w-10 mx-3 rounded-md shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
         src={props.src}
         alt={props.alt}
       ></img>
@@ -106,7 +109,7 @@ function SocialLink(props) {
 function ThemeButton(props) {
   return (
     <svg
-      className="w-6 h-6 md:w-8 md:h-8"
+      className="w-6 h-6"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
