@@ -39,7 +39,7 @@ export default function Home() {
         <h1 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-wide mt-6 dark:text-white">
           Hajaniaina Rafaliarintsoa
         </h1>
-        <div className="flex flex-row mx-auto mt-6">
+        <div className="flex flex-row mx-auto mt-6 mb-16">
           <SocialLink
             href="https://twitter.com/_hajaniain"
             alt="hajaniaina rafaliarintsoa's twitter"
